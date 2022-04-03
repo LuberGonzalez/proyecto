@@ -1,0 +1,336 @@
+:root {
+  /* Colores */
+  --color-primary: rgb(34, 57, 61);
+  --color-secondary: #fc0;
+  --color-alternaive: #f0c;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+
+}
+
+/* Letras Y Tipografia */
+:root {
+  --font-family: Georgia, "Times New Roman", Times, serif;
+
+  --font-normal: 300;
+  --font-bold: 700;
+}
+/*  Alturas Y Anchos */
+:root {
+  --heigth-header: 5rem;
+}
+
+/* Z Index */
+:root {
+  --z-tooltip: 1;
+  --z-fixed: 10;
+  --z-max: 100;
+  --z-max-max: 1000;
+}
+
+
+/*  Reseteo y limpieza de los elmentos HTML para poder trabajr sin los estilos por defectos*/
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: var(--font-family);
+  /* border: 1px solid black; */
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input {
+  outline: none;
+  border: 2px solid #fff;
+}
+
+input:focus {
+  border: 2px solid steelblue;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+[class*="button--"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 25px;
+  align-self: flex-end;
+  color: rgb(14, 13, 13);
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-block;
+
+  /* Efecto */
+  transition: all 0.3s ease-in-out;
+}
+
+.button--first,
+.button--second {
+    width: 50%;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos de los botones */
+
+
+
+/* clase para que la pagina no se desborde y tenga un contenedor fijo llegado a un tamaño maximo. */
+.container {
+    max-width: 1100px;
+}
+
+
+/*  Esta clase es para generar grillas responsivas que se adapten al tamaño dinamicamente  */
+
+.grid-fluid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+    gap:1rem;
+    padding: 3rem;
+    background-color: #111;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Clase que ayuda a crear 2 columnas que dependiendo del tamaño se coloca automaticamente en una con ayuda de grid */
+.grid-container-2  {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(600px,1fr));
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    width: 100%;
+}
+
+
+/* Estilos del Header */
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    /* padding: 0.5rem; */
+    border:2px solid red;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header > * {
+    border:1px solid black;
+}
+
+/* Estilos al menu de navegacion */
+.container-menu {
+    height: 0;
+    width: 100%;
+    transition: all .3s ease-in-out;
+}
+/* clase que se coloca con JS al presionar el button toggle */
+.container-menu.active {
+    height: auto;
+}
+
+.list-item {
+    padding: 1rem;
+}
+
+
+/* estilos a los contenedores de los botones */
+.container-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+
+/* Estilos al contenedor del boton que acciona el menu en los dipositivos moviles */
+.container-button-toggle {
+    position: absolute;
+    top:10px;
+    right:10px;
+    align-self:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid skyblue;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+/*  Estilos al boton*/
+.button-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .subrayado {color:hsl(190,100%,50%);} */
+
+
+main {
+    background-color: #ccc;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos a la parte principal de la pagina */
+.container-titles {
+    text-align: center;
+}
+
+
+.container-banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container-tittles {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:1rem;
+}
+
+.description {
+    display: flex; 
+    align-items: center;
+}
+
+.icon-check {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+
+/* Estilos a la seccion de las reseñas. */
+.container-reviews {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.cards-reviews {
+    border-radius: 5%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    background-color: #fff;
+    position: relative;
+
+}
+.img-reviews {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border-top-color:#fff;
+    position: absolute;
+    top:-20px;
+    left:47%;
+}
+
+/* Estilos del formulario de contacto */
+.container-form {
+    width: 100%;
+}
+.form-contact {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.form-contact-label,
+.form-contact-input {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.form-contact-input {
+    border-radius: 5px;
+}
+
+.form-contact-title {
+    font-weight: var(--font-bold);
+    margin: 0;
+}
+
+.form-contact-text {
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para que el iframe del mapa sea responsivo */
+
+.container-map {
+    padding: 1rem;
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+  }
+
+.container-map iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+
+
+/* Mediaqueries */
+
+@media (max-width:768px) {
+    /* .main-nav,
+    .container-buttons:first-child {
+        display: none;
+    } */
+    .container-buttons:first-child {
+        background-color: red;
+    }
+
+
+}
